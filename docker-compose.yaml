@@ -26,6 +26,8 @@ services:
     command: >
       sh -c "
       cp /tmp/mysql_app.war /opt/tomcat9/webapps/ &&
+      mkdir -p /opt/tomcat9/ROOT/ && 
+      cp /tmp/content/Config.properties /opt/tomcat9/ROOT/ && 
       /opt/tomcat9/bin/catalina.sh run
       "
     ports:
