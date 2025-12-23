@@ -1,0 +1,14 @@
+---
+services:
+  buildproject:
+    image: andresarm/deploy:alp-myimg.v1
+    container_name: bild-war
+    command: >
+      sh -c "
+      git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git
+      cd /App42PaaS-Java-MySQL-Sample
+      mkdir -p target
+      mvn package -DskipTests
+      "
+    volumes:
+      - /tmp:/App42PaaS-Java-MySQL-Sample/target
