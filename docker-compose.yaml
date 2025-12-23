@@ -17,6 +17,8 @@ services:
   tomcat:
     image: andresarm/deploy:tomcat-v1
     container_name: deploy
+    depends_on:
+      - buildproject
     #restart: always
     command:
       - COPY /tmp/mysql_app.war /opt/tomcat9/webapps/
