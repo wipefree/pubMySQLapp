@@ -18,10 +18,11 @@ services:
     image: andresarm/deploy:tomcat-v1
     container_name: deploy
     depends_on:
-      - buildproject
+      buildproject:
+        condition: service_completed_successfully
     #restart: always
     command:
-      - COPY /tmp/mysql_app.war /opt/tomcat9/webapps/
+      - cp /tmp/mysql_app.war /opt/tomcat9/webapps/
     ports:
       - 8080:8080
     volumes:
