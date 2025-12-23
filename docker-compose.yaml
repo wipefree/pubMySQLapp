@@ -11,7 +11,7 @@ services:
       mvn package -DskipTests &&
       cp ./target/*.war /tmp/mysql_app.war && 
       mkdir -p /tmp/content/ && 
-      cp ./WebContent/Config.properties /tmp/content/
+      cp -r ./WebContent/Config.properties /tmp/content/
       "
     volumes:
       - /tmp:/tmp
@@ -27,7 +27,7 @@ services:
       sh -c "
       cp /tmp/mysql_app.war /opt/tomcat9/webapps/ &&
       mkdir -p /opt/tomcat9/ROOT/ && 
-      cp /tmp/content/Config.properties /opt/tomcat9/ROOT/ && 
+      cp -r /tmp/content/ /opt/tomcat9/ROOT/ && 
       /opt/tomcat9/bin/catalina.sh run
       "
     ports:
