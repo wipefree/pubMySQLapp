@@ -31,7 +31,7 @@ services:
     volumes:
       - /tmp:/tmp
 
-  dbapp:
-    image: mysql:8.0-debian
-    container_name: mysqldb
+  #dbapp:
+  #  image: mysql:8.0-debian
+  #  container_name: mysqldb
 
