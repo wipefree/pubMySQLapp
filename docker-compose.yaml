@@ -9,7 +9,8 @@ services:
       cd ./App42PaaS-Java-MySQL-Sample
       mkdir -p target
       mvn package -DskipTests
+      cp ./App42PaaS-Java-MySQL-Sample/target/*.war /tmp 
       "
     volumes:
-      - /tmp:./App42PaaS-Java-MySQL-Sample/target
+      - /tmp:/tmp
 
