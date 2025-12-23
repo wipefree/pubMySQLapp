@@ -24,7 +24,7 @@ services:
     command: >
       sh -c "
       cp /tmp/mysql_app.war /opt/tomcat9/webapps/ &&
-      catalina.sh run
+      /opt/tomcat9/bin/catalina.sh run
       "
     ports:
       - 8080:8080
