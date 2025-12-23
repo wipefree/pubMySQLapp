@@ -5,12 +5,15 @@ services:
     container_name: bild-war
     command: >
       sh -c "
-      git clone https://github.com/wipefree/Java-MySQL-Sample.git && 
-      cd ./Java-MySQL-Sample && 
+      git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git && 
+      cd ./App42PaaS-Java-MySQL-Sample && 
       mkdir -p target && 
       mvn package -DskipTests &&
       cp ./target/*.war /tmp/mysql_app.war
       "
+    #git clone https://github.com/wipefree/Java-MySQL-Sample.git &&
+    #cd ./Java-MySQL-Sample &&
+
     volumes:
       - /tmp:/tmp
 
