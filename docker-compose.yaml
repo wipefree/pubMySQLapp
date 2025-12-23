@@ -9,8 +9,18 @@ services:
       cd ./App42PaaS-Java-MySQL-Sample && 
       mkdir -p target && 
       mvn package -DskipTests &&
-      cp ./target/*.war /tmp 
+      cp ./target/*.war /tmp/mysql_app.war
       "
     volumes:
       - /tmp:/tmp
 
+  tomcat:
+    image: andresarm/deploy:tomcat-v1
+    container_name: deploy
+    #restart: always
+    command:
+      - COPY /tmp/mysql_app.war /opt/tomcat9/webapps/
+    ports:
+      - 8080:8080
+    volumes:
+      - /tmp:/tmp
