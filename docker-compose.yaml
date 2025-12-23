@@ -6,7 +6,7 @@ services:
     command: >
       sh -c "
       git clone https://github.com/wipefree/Java-MySQL-Sample.git && 
-      cd ./App42PaaS-Java-MySQL-Sample && 
+      cd ./Java-MySQL-Sample && 
       mkdir -p target && 
       mvn package -DskipTests &&
       cp ./target/*.war /tmp/mysql_app.war
