@@ -42,8 +42,6 @@ services:
       MYSQL_PASSWORD: qwerty
     ports:
       - 3306:3306
-    volumes:
-      - /tmp/log:/var/log
     #volumes:
     #  - mysql_data:/var/lib/mysql
 
