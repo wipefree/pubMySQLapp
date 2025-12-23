@@ -20,7 +20,7 @@ services:
     depends_on:
       buildproject:
         condition: service_completed_successfully
-    #restart: always
+    restart: always
     command: cp /tmp/mysql_app.war /opt/tomcat9/webapps/
     ports:
       - 8080:8080
