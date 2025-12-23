@@ -11,7 +11,7 @@ services:
       mvn package -DskipTests &&
       cp ./target/*.war /tmp/mysql_app.war && 
       mkdir -p /tmp/content/ && 
-      cp -r ./WebContent/Config.properties /tmp/content/
+      cp -r ./WebContent/ /tmp/content/
       "
     volumes:
       - /tmp:/tmp
