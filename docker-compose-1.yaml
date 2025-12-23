@@ -17,7 +17,7 @@ services:
       - /tmp:/tmp
 
   tomcat:
-    image: tomcat:9.0.111-jre21-temurin-jammy
+    image: andresarm/deploy:tomcat-v1
     container_name: deploy
     depends_on:
       buildproject:
@@ -25,9 +25,9 @@ services:
     #restart: always
     command: >
       sh -c "
-      cp /tmp/mysql_app.war /usr/local/tomcat/webapps/ &&
-      mkdir -p /usr/local/tomcat/ROOT/ && 
-      cp -r /tmp/content/* /usr/local/tomcat/ROOT/ && 
+      cp /tmp/mysql_app.war /opt/tomcat9/webapps/ &&
+      mkdir -p /opt/tomcat9/ROOT/ && 
+      cp -r /tmp/content/ /opt/tomcat9/ROOT/ && 
       /opt/tomcat9/bin/catalina.sh run
       "
     ports:
