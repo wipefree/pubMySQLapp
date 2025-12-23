@@ -22,7 +22,7 @@ services:
         condition: service_completed_successfully
     #restart: always
     command: >
-      sh -c"
+      sh -c "
       cp /tmp/mysql_app.war /opt/tomcat9/webapps/ &&
       catalina.sh run
       "
