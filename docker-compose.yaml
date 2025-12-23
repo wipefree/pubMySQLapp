@@ -23,8 +23,8 @@ services:
     restart: always
     command: >
       sh -c"
-      cp /tmp/mysql_app.war /opt/tomcat9/webapps/ && 
-      command: tail -f /dev/null
+      cp /tmp/mysql_app.war /opt/tomcat9/webapps/ &&
+      catalina.sh run
       "
     ports:
       - 8080:8080
