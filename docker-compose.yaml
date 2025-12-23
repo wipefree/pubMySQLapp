@@ -37,7 +37,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: testdb
+      MYSQL_DATABASE: test
       MYSQL_USER: user
       MYSQL_PASSWORD: qwerty
     ports:
