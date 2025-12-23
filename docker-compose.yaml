@@ -5,7 +5,7 @@ services:
     container_name: bild-war
     command: >
       sh -c "
-      git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git && 
+      git clone https://github.com/wipefree/Java-MySQL-Sample.git && 
       cd ./App42PaaS-Java-MySQL-Sample && 
       mkdir -p target && 
       mvn package -DskipTests &&
@@ -30,3 +30,8 @@ services:
       - 8080:8080
     volumes:
       - /tmp:/tmp
+
+  dbapp:
+    image: mysql:8.0-debian
+    container_name: mysqldb
+
