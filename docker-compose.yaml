@@ -1,7 +1,7 @@
 ---
 services:
   buildproject:
-    image: andresarm/deploy:alp-myimg.v1
+    image: andresarm/agent
     container_name: bild-war
     command: >
       sh -c "
