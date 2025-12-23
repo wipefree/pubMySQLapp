@@ -6,7 +6,7 @@ services:
     command: >
       sh -c "
       git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git
-      cd /App42PaaS-Java-MySQL-Sample
+      cd App42PaaS-Java-MySQL-Sample
       mkdir -p target
       mvn package -DskipTests
       "
