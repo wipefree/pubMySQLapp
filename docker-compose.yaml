@@ -36,7 +36,7 @@ services:
       sh -c "
       cp /tmp/mysql_app.war /usr/local/tomcat/webapps/ &&
       mkdir -p /usr/local/tomcat/ROOT/ && 
-      cp /tmp/content/WebContent/Config.properties /usr/local/tomcat/ROOT/ && 
+      cp /tmp/content/Config.properties /usr/local/tomcat/ROOT/ && 
       /usr/local/tomcat/bin/catalina.sh run
       "
     networks:
