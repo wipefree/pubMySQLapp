@@ -13,7 +13,7 @@ services:
       mvn package -DskipTests &&
       cp ./target/*.war /tmp/mysql_app.war && 
       mkdir -p /tmp/content/ && 
-      cp -r ./WebContent/ /tmp/content/
+      cp ./WebContent/Config.properties /tmp/content/
       "
     networks:
       - app-network
@@ -27,16 +27,16 @@ services:
       buildproject:
         condition: service_completed_successfully
     #restart: always
-    environment:
-      DB_URL: "jdbc:mysql://dbapp:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true"
-      DB_USER: "root"
-      DB_PASSWORD: "root"
-      DB_NAME: "test"
+#    environment:
+#      DB_URL: "jdbc:mysql://dbapp:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true"
+#      DB_USER: "root"
+#      DB_PASSWORD: "root"
+#      DB_NAME: "test"
     command: >
       sh -c "
       cp /tmp/mysql_app.war /usr/local/tomcat/webapps/ &&
       mkdir -p /usr/local/tomcat/ROOT/ && 
-      cp -r /tmp/content/WebContent/* /usr/local/tomcat/ROOT/ && 
+      cp /tmp/content/WebContent/Config.properties /usr/local/tomcat/ROOT/ && 
       /usr/local/tomcat/bin/catalina.sh run
       "
     networks:
