@@ -3,7 +3,7 @@ version: '3.8'
 
 services:
   buildproject:
-    image: maven:3.8-openjdk-11 #andresarm/agent
+    image: maven:3.8-openjdk-11
     container_name: bild-war
     command: >
       sh -c "
